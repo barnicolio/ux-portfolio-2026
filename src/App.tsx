@@ -1,11 +1,20 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import About from './pages/About'
+import CaseStudy from './pages/CaseStudy'
+
 function App() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
-      <h1 className="text-4xl tracking-tight md:text-5xl">Nicole Arocha</h1>
-      <p className="max-w-md text-[var(--text)]">
-        UX portfolio — case studies coming soon.
-      </p>
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="work/:slug" element={<CaseStudy />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
