@@ -4,7 +4,7 @@ import CaseStudyCard from '../components/CaseStudyCard'
 function Home() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-12 sm:py-16">
-      <section className="mb-12 max-w-2xl">
+      <section className="mb-12">
         <h1 className="text-3xl tracking-tight text-[var(--text-h)] sm:text-4xl">
           Design technology leader, 12+ years building the systems behind good
           design.

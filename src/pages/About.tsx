@@ -24,7 +24,7 @@ const strengths = [
 const experience = [
   {
     company: 'Employers Insurance Group',
-    role: 'Manager, Experience Design — Product & Digital Operations',
+    role: 'Manager, Experience Design, Product & Digital Operations',
     dates: 'Nov 2023 – Present',
   },
   {
@@ -64,21 +64,53 @@ const experience = [
   },
 ]
 
+const testimonials = [
+  {
+    quote:
+      'She transformed the design team’s reputation from a downstream service to a strategic partner — delivering quality work across our highest-priority initiatives and embracing innovation proactively.',
+    name: 'Kelsey Rich',
+    role: 'Direct Manager, Employers Insurance Group',
+  },
+  {
+    quote:
+      'I had the distinct honor of working with Nicole for nearly two years at Cake Insure. Nicole is a phenomenal UX designer and I’m continuously impressed with her ability to take on seemingly impossible problems and provide elegant and straightforward solutions. From conducting user interviews and extracting the most important information to quickly creating clean, easy to use, and beautiful designs, Nicole was such a core part of the successful products we built. One of the things I value most about Nicole is her ability to connect with anyone and work to find the best solutions that fit the needs of the business while being incredibly customer focused. She is a pleasure to work with and I cannot recommend her enough for the quality of her work and her contribution to an amazing workplace.',
+    name: 'Eric Nelson',
+    role: 'Director of Platform Architecture & Quality Assurance, Cake Insure / Pinnacol Assurance',
+  },
+  {
+    quote:
+      'There are three words that immediately come to mind when I think about Nicole: Learner, Listener, and Producer. … She listens to people’s feedback and input and turns around and puts their words into her design solutions, and it’s always better than what you could have imagined.',
+    name: 'Collin Conaway',
+    role: 'COO, Cake Insure',
+  },
+]
+
 function About() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-12 sm:py-16">
-      <h1 className="text-3xl tracking-tight text-[var(--text-h)] sm:text-4xl">
-        About
-      </h1>
+      <div className="flex flex-col items-center gap-6 text-center">
+        <img
+          src="/nicole-headshot.png"
+          alt="Nicole Arocha"
+          className="h-36 w-36 shrink-0 rounded-full object-cover object-[50%_18%] ring-1 ring-[var(--border)]"
+        />
+        <h1 className="text-3xl tracking-tight text-[var(--text-h)] sm:text-4xl">
+          About me
+        </h1>
+      </div>
+
+      <p className="mt-8 text-[var(--text)]">
+        I’m a design technology leader with 12+ years building the design
+        systems, design-to-code pipelines, and AI-assisted workflows that help
+        teams move faster without losing craft. Today I lead an Experience
+        Design team, own the Figma design system, and pilot new AI tooling,
+        from an AI-generated component library to a test agent for quoting
+        insurance.
+      </p>
+
       <p className="mt-4 text-[var(--text)]">
-        Design technology leader who’s spent 12+ years building the systems,
-        design-to-code pipelines, and AI-powered workflows that let design
-        teams move faster without losing craft. Currently leads an Experience
-        Design team, owns the Figma design system, and has spent the last
-        three quarters piloting AI tooling — including an AI-generated
-        component library prototype, Figma Make, and a test agent for quoting
-        insurance. Also built the customer-measurement infrastructure (Pendo,
-        CES/NPS/CSAT) that ties design decisions to business outcomes.
+        Outside of work, I live in the Denver, CO area and spend my free time
+        running, hiking, and reefkeeping.
       </p>
 
       <section className="mt-12">
@@ -95,6 +127,28 @@ function About() {
             </div>
           ))}
         </dl>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="mb-4 text-lg text-[var(--text-h)]">Coworker testimonials</h2>
+        <div className="grid grid-cols-1 gap-6">
+          {testimonials.map((testimonial) => (
+            <figure
+              key={testimonial.name}
+              className="border-l-2 border-[var(--accent-border)] pl-4"
+            >
+              <blockquote className="text-[var(--text)] italic">
+                “{testimonial.quote}”
+              </blockquote>
+              <figcaption className="mt-2 text-sm">
+                <span className="font-medium text-[var(--text-h)]">
+                  {testimonial.name}
+                </span>
+                <span className="text-[var(--text)]"> — {testimonial.role}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       <section className="mt-12">
@@ -121,12 +175,12 @@ function About() {
         <h2 className="mb-4 text-lg text-[var(--text-h)]">Education</h2>
         <ul className="space-y-2 text-sm text-[var(--text)]">
           <li>
-            Wharton School — Executive Presence and Influence: Persuasive
+            Wharton School: Executive Presence and Influence, Persuasive
             Leadership Certification
           </li>
-          <li>Nielsen Norman Group — UX Design Certification</li>
+          <li>Nielsen Norman Group: UX Design Certification</li>
           <li>
-            Rocky Mountain College of Art & Design — BFA, Communication Arts
+            Rocky Mountain College of Art & Design: BFA, Communication Arts
             & 3D Animation, Magna Cum Laude
           </li>
         </ul>

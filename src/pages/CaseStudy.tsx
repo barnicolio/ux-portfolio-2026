@@ -1,5 +1,82 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { getCaseStudy } from '../data/caseStudies'
+import type { Block } from '../data/caseStudies'
+import Carousel from '../components/Carousel'
+
+function BlockContent({ block, fallbackAlt }: { block: Block; fallbackAlt: string }) {
+  switch (block.type) {
+    case 'heading':
+      return block.level === 3 ? (
+        <h3 className="mt-8 mb-2 text-base font-medium text-[var(--text-h)]">{block.text}</h3>
+      ) : (
+        <h2 className="mt-12 mb-3 text-lg text-[var(--text-h)]">{block.text}</h2>
+      )
+    case 'text':
+      return <p className="mb-4 text-[var(--text)]">{block.text}</p>
+    case 'list':
+      return block.ordered ? (
+        <ol className="mb-4 list-decimal space-y-2 pl-5 text-[var(--text)]">
+          {block.items.map((item) => (
+            <li key={item} className="pl-1 leading-relaxed">
+              {item}
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <ul className="mb-4 list-disc space-y-2 pl-5 text-[var(--text)]">
+          {block.items.map((item) => (
+            <li key={item} className="leading-relaxed">
+              {item}
+            </li>
+          ))}
+        </ul>
+      )
+    case 'browser':
+      return (
+        <figure className="my-6">
+          <div className="overflow-hidden rounded-xl border border-[var(--border)] shadow-xl">
+            <div className="flex items-center gap-2 border-b border-[var(--border)] bg-[var(--border)] px-3 py-2.5">
+              <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+              <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+              <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+              {block.url && (
+                <div className="ml-3 flex-1 select-none truncate rounded-md bg-[var(--bg)] px-3 py-1 text-xs text-[var(--text)]">
+                  {block.url}
+                </div>
+              )}
+            </div>
+            <div className="aspect-[16/10] w-full overflow-hidden bg-white">
+              <img
+                src={block.src}
+                alt={block.caption ?? fallbackAlt}
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+          </div>
+          {block.caption && (
+            <figcaption className="mt-2 text-xs text-[var(--text)]">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      )
+    case 'carousel':
+      return <Carousel slides={block.slides} />
+    case 'image':
+      return (
+        <figure className="my-6">
+          <img
+            src={block.src}
+            alt={block.caption ?? fallbackAlt}
+            className="w-full rounded-lg border border-[var(--border)]"
+          />
+          {block.caption && (
+            <figcaption className="mt-2 text-xs text-[var(--text)]">{block.caption}</figcaption>
+          )}
+        </figure>
+      )
+  }
+}
 
 function CaseStudy() {
   const { slug } = useParams()
@@ -16,9 +93,8 @@ function CaseStudy() {
       </Link>
 
       <header className="mt-6 mb-10">
-        <div className="flex items-center justify-between text-xs text-[var(--text)]">
+        <div className="text-xs text-[var(--text)]">
           <span>{project.company}</span>
-          <span>{project.year}</span>
         </div>
         <h1 className="mt-2 text-3xl tracking-tight text-[var(--text-h)] sm:text-4xl">
           {project.title}
@@ -36,33 +112,9 @@ function CaseStudy() {
         </ul>
       </header>
 
-      <section className="mb-8">
-        <h2 className="mb-2 text-lg">Overview</h2>
-        <p className="text-[var(--text)]">{project.overview}</p>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="mb-2 text-lg">The problem</h2>
-        <p className="text-[var(--text)]">{project.problem}</p>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="mb-2 text-lg">Approach</h2>
-        <ul className="list-disc space-y-2 pl-5 text-[var(--text)]">
-          {project.approach.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section>
-        <h2 className="mb-2 text-lg">Outcome</h2>
-        <ul className="list-disc space-y-2 pl-5 text-[var(--text)]">
-          {project.outcome.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
+      {project.body.map((block, index) => (
+        <BlockContent key={index} block={block} fallbackAlt={project.title} />
+      ))}
     </article>
   )
 }
