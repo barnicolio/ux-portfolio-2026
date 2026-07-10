@@ -2,7 +2,6 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
-const EMAIL = 'nicole.arocha@gmail.com'
 const WEB3FORMS_KEY = 'e5ee5723-48cc-410b-8489-6b7231b9fd49'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
@@ -136,29 +135,10 @@ function Contact() {
             </span>
           )}
           {status === 'error' && (
-            <>
-              Something went wrong. Please email me directly at{' '}
-              <a
-                href={`mailto:${EMAIL}`}
-                className="text-[var(--accent)] hover:underline"
-              >
-                {EMAIL}
-              </a>
-              .
-            </>
+            <>Something went wrong sending your message. Please try again.</>
           )}
         </p>
       </form>
-
-      <p className="mt-8 text-sm text-[var(--text)]">
-        Prefer to reach out directly?{' '}
-        <a
-          href={`mailto:${EMAIL}`}
-          className="text-[var(--accent)] hover:underline"
-        >
-          {EMAIL}
-        </a>
-      </p>
     </main>
   )
 }

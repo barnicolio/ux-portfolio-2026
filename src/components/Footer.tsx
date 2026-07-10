@@ -22,9 +22,6 @@ function Footer() {
             Resume
             <span className="sr-only"> (opens in new tab)</span>
           </a>
-          <a href="mailto:nicole.arocha@gmail.com" className="hover:text-[var(--text-h)]">
-            Email
-          </a>
         </div>
       </div>
     </footer>
