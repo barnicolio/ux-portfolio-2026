@@ -98,7 +98,7 @@ export const caseStudies: CaseStudy[] = [
       { type: 'heading', text: 'Overview' },
       {
         type: 'text',
-        text: 'Customer feedback existed but wasn’t owned by design and wasn’t real-time, making it hard to connect specific design decisions to business impact.',
+        text: 'No department at the company truly owned collecting and maintaining a pulse on customer sentiment and feedback. It existed, but it was scattered and rarely real-time, which made it hard to connect design decisions to business impact. I took the initiative to establish a Voice of Customer program, pairing the UX research skill on my team with behavioral analytics from Pendo and other sources to give the organization a real-time read on how customers felt.',
       },
       { type: 'heading', text: 'The problem' },
       {

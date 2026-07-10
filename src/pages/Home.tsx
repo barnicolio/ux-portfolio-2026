@@ -6,13 +6,13 @@ function Home() {
     <main className="mx-auto max-w-4xl px-6 py-12 sm:py-16">
       <section className="mb-12">
         <h1 className="text-3xl tracking-tight text-[var(--text-h)] sm:text-4xl">
-          Design technology leader, 12+ years building the systems behind good
-          design.
+          Design technology leader, 12+ years building the systems behind great
+          experiences.
         </h1>
         <p className="mt-4 text-[var(--text)]">
           I build the design systems, design-to-code pipelines, and
           AI-assisted workflows that let design teams move faster without
-          losing craft. Selected case studies below.
+          losing craft.
         </p>
       </section>
 
