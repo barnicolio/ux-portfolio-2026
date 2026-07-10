@@ -29,7 +29,13 @@ export const caseStudies: CaseStudy[] = [
     summary:
       'Piloted AI-assisted design tooling across the practice, from an AI-generated component library to a live Storybook-to-Claude Design pipeline.',
     role: 'Manager, Experience Design',
+    thumbnail: '/case-studies/ai-assisted-design-practice/office-ai-hero.jpg',
+    thumbnailPosition: 'center',
     body: [
+      {
+        type: 'image',
+        src: '/case-studies/ai-assisted-design-practice/office-ai-hero.jpg',
+      },
       { type: 'heading', text: 'Overview' },
       {
         type: 'text',
@@ -128,7 +134,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       'Designed a lender-matching system that translated lending complexity into plain language, contributing to 2x revenue growth in its first year.',
     role: 'Lead UX Designer',
-    thumbnail: '/case-studies/biggerpockets-lender-finder/lender-finder-hero.jpg',
+    thumbnail: '/case-studies/biggerpockets-lender-finder/urban-lender-finder-hero.jpg',
     thumbnailPosition: 'center',
     body: [
       {
@@ -218,7 +224,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       'Rebuilt the forums for the largest US real estate investing community to reverse a 50% year-over-year decline in activity.',
     role: 'Lead UX Designer',
-    thumbnail: '/case-studies/biggerpockets-forums/01-hero.png',
+    thumbnail: '/case-studies/biggerpockets-forums/cozy-forum-hero.jpeg',
     body: [
       { type: 'heading', text: 'Overview' },
       {
@@ -353,7 +359,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       'Rebuilt a 15-year-old policy management platform in Salesforce, cutting policy binding time from two weeks to under ten minutes.',
     role: 'Senior UX Designer',
-    thumbnail: '/case-studies/salesforce-policy-management/02-rating-tool.png',
+    thumbnail: '/case-studies/salesforce-policy-management/desk-salesforce-hero.jpg',
     body: [
       { type: 'heading', text: 'Overview' },
       {
@@ -458,7 +464,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       'Designed a self-service quote flow that took small-business workers’ comp quotes from 3–5 days to under five minutes, and drove a redesign that lifted NPS by 16 points.',
     role: 'Lead Senior UX Designer',
-    thumbnail: '/case-studies/cake-insure/Cake-Hero.jpg',
+    thumbnail: '/case-studies/cake-insure/coffee-cake-hero.jpeg',
     body: [
       { type: 'heading', text: 'Overview' },
       {
