@@ -29,12 +29,13 @@ function Nav() {
             className="text-sm text-[var(--text)] transition-colors hover:text-[var(--text-h)]"
           >
             Resume
+            <span className="sr-only"> (opens in new tab)</span>
           </a>
           <a
             href="https://www.linkedin.com/in/nicolearocha/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
+            aria-label="LinkedIn (opens in new tab)"
             className="text-[var(--text)] transition-colors hover:text-[var(--text-h)]"
           >
             <svg

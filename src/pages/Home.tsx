@@ -1,7 +1,10 @@
 import { caseStudies } from '../data/caseStudies'
 import CaseStudyCard from '../components/CaseStudyCard'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 function Home() {
+  useDocumentTitle('Nicole Arocha · UX Portfolio')
+
   return (
     <main className="mx-auto max-w-4xl px-6 py-12 sm:py-16">
       <section className="mb-12">

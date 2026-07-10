@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 const EMAIL = 'nicole.arocha@gmail.com'
 const WEB3FORMS_KEY = 'e5ee5723-48cc-410b-8489-6b7231b9fd49'
@@ -7,9 +8,11 @@ const WEB3FORMS_KEY = 'e5ee5723-48cc-410b-8489-6b7231b9fd49'
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 const fieldClass =
-  'w-full rounded-lg border border-[var(--border)] bg-transparent px-3 py-2 text-[var(--text-h)] placeholder:text-[var(--text)] focus:border-[var(--accent-border)] focus:outline-none disabled:opacity-60'
+  'w-full rounded-lg border border-[var(--border)] bg-transparent px-3 py-2 text-[var(--text-h)] placeholder:text-[var(--text)] focus:border-[var(--accent-border)] disabled:opacity-60'
 
 function Contact() {
+  useDocumentTitle('Contact · Nicole Arocha')
+
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -124,13 +127,16 @@ function Contact() {
           >
             {submitting ? 'Sending…' : 'Send message'}
           </button>
+        </div>
+
+        <p role="status" aria-live="polite" className="text-sm text-[var(--text)]">
           {status === 'success' && (
-            <span className="text-sm text-[var(--accent)]">
+            <span className="text-[var(--accent)]">
               Thanks! Your message is on its way.
             </span>
           )}
           {status === 'error' && (
-            <span className="text-sm text-[var(--text)]">
+            <>
               Something went wrong. Please email me directly at{' '}
               <a
                 href={`mailto:${EMAIL}`}
@@ -139,9 +145,9 @@ function Contact() {
                 {EMAIL}
               </a>
               .
-            </span>
+            </>
           )}
-        </div>
+        </p>
       </form>
 
       <p className="mt-8 text-sm text-[var(--text)]">

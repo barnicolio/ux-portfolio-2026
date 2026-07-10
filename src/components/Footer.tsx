@@ -11,6 +11,7 @@ function Footer() {
             className="hover:text-[var(--text-h)]"
           >
             LinkedIn
+            <span className="sr-only"> (opens in new tab)</span>
           </a>
           <a
             href="/Nicole_Arocha_Resume_2026.pdf"
@@ -19,6 +20,7 @@ function Footer() {
             className="hover:text-[var(--text-h)]"
           >
             Resume
+            <span className="sr-only"> (opens in new tab)</span>
           </a>
           <a href="mailto:nicole.arocha@gmail.com" className="hover:text-[var(--text-h)]">
             Email

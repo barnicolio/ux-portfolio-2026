@@ -33,7 +33,16 @@ function Carousel({ slides }: { slides: CarouselSlide[] }) {
 
   return (
     <div className="my-6">
-      <div className="mx-auto max-w-[340px]">
+      <div
+        className="mx-auto max-w-[340px]"
+        role="group"
+        aria-roledescription="carousel"
+        aria-label="Screens from the flow"
+      >
+        <p className="sr-only" aria-live="polite">
+          Slide {index + 1} of {count}
+          {current.caption ? `: ${current.caption}` : ''}
+        </p>
         <div
           className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg)]"
           onTouchStart={handleTouchStart}
@@ -66,7 +75,7 @@ function Carousel({ slides }: { slides: CarouselSlide[] }) {
             ←
           </button>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             {slides.map((slide, i) => (
               <button
                 key={slide.src}
@@ -74,12 +83,16 @@ function Carousel({ slides }: { slides: CarouselSlide[] }) {
                 onClick={() => go(i)}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-current={i === index}
-                className={`h-2 w-2 rounded-full transition-colors ${
-                  i === index
-                    ? 'bg-[var(--accent)]'
-                    : 'bg-[var(--border)] hover:bg-[var(--accent-border)]'
-                }`}
-              />
+                className="group flex h-6 w-6 items-center justify-center rounded-full"
+              >
+                <span
+                  className={`h-2 w-2 rounded-full transition-colors ${
+                    i === index
+                      ? 'bg-[var(--accent)]'
+                      : 'bg-[var(--border)] group-hover:bg-[var(--accent-border)]'
+                  }`}
+                />
+              </button>
             ))}
           </div>
 

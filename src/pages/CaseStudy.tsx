@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { getCaseStudy } from '../data/caseStudies'
 import type { Block } from '../data/caseStudies'
 import Carousel from '../components/Carousel'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 function BlockContent({ block, fallbackAlt }: { block: Block; fallbackAlt: string }) {
   switch (block.type) {
@@ -40,7 +41,10 @@ function BlockContent({ block, fallbackAlt }: { block: Block; fallbackAlt: strin
               <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
               <span className="h-3 w-3 rounded-full bg-[#28c840]" />
               {block.url && (
-                <div className="ml-3 flex-1 select-none truncate rounded-md bg-[var(--bg)] px-3 py-1 text-xs text-[var(--text)]">
+                <div
+                  aria-hidden="true"
+                  className="ml-3 flex-1 select-none truncate rounded-md bg-[var(--bg)] px-3 py-1 text-xs text-[var(--text)]"
+                >
                   {block.url}
                 </div>
               )}
@@ -48,7 +52,7 @@ function BlockContent({ block, fallbackAlt }: { block: Block; fallbackAlt: strin
             <div className="aspect-[16/10] w-full overflow-hidden bg-white">
               <img
                 src={block.src}
-                alt={block.caption ?? fallbackAlt}
+                alt={block.caption ? '' : fallbackAlt}
                 className="h-full w-full object-cover object-top"
               />
             </div>
@@ -67,7 +71,7 @@ function BlockContent({ block, fallbackAlt }: { block: Block; fallbackAlt: strin
         <figure className="my-6">
           <img
             src={block.src}
-            alt={block.caption ?? fallbackAlt}
+            alt={block.caption ? '' : fallbackAlt}
             className="w-full rounded-lg border border-[var(--border)]"
           />
           {block.caption && (
@@ -81,6 +85,9 @@ function BlockContent({ block, fallbackAlt }: { block: Block; fallbackAlt: strin
 function CaseStudy() {
   const { slug } = useParams()
   const project = slug ? getCaseStudy(slug) : undefined
+  useDocumentTitle(
+    project ? `${project.title} · Nicole Arocha` : 'Nicole Arocha · UX Portfolio',
+  )
 
   if (!project) {
     return <Navigate to="/" replace />

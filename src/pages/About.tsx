@@ -1,3 +1,5 @@
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
+
 const strengths = [
   {
     title: 'Design Systems & Tooling',
@@ -86,6 +88,8 @@ const testimonials = [
 ]
 
 function About() {
+  useDocumentTitle('About · Nicole Arocha')
+
   return (
     <main className="mx-auto max-w-2xl px-6 py-12 sm:py-16">
       <div className="flex flex-col items-center gap-6 text-center">
@@ -103,7 +107,7 @@ function About() {
         I’m a design technology leader with 12+ years building the design
         systems, design-to-code pipelines, and AI-assisted workflows that help
         teams move faster without losing craft. Today I lead an Experience
-        Design team, own the Figma design system, and pilot new AI tooling,
+        Design team, own the design system, and pilot new AI tooling,
         from an AI-generated component library to a test agent for quoting
         insurance.
       </p>
@@ -194,6 +198,7 @@ function About() {
           className="rounded-full border border-[var(--accent-border)] px-4 py-2 text-sm text-[var(--accent)] transition-colors hover:bg-[var(--accent-bg)]"
         >
           View Resume
+          <span className="sr-only"> (opens in new tab)</span>
         </a>
         <a
           href="https://www.linkedin.com/in/nicolearocha/"
@@ -202,6 +207,7 @@ function About() {
           className="rounded-full border border-[var(--border)] px-4 py-2 text-sm text-[var(--text)] transition-colors hover:text-[var(--text-h)]"
         >
           LinkedIn
+          <span className="sr-only"> (opens in new tab)</span>
         </a>
       </div>
     </main>
