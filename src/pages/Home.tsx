@@ -10,7 +10,7 @@ function Home() {
       <section className="mb-12">
         <h1 className="text-3xl tracking-tight text-[var(--text-h)] sm:text-4xl">
           Design technology leader, 12+ years building the systems behind great
-          experiences.
+          user experiences.
         </h1>
         <p className="mt-4 text-[var(--text)]">
           I build the design systems, design-to-code pipelines, and
