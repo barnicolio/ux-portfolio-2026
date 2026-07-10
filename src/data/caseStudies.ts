@@ -94,7 +94,15 @@ export const caseStudies: CaseStudy[] = [
     summary:
       'Built the organization’s first real-time NPS/CES/CSAT infrastructure, tying design decisions directly to measurable business outcomes.',
     role: 'Manager, Experience Design',
+    thumbnail: '/case-studies/voc-program/voc-hero.jpg',
+    thumbnailPosition: 'center',
     body: [
+      {
+        type: 'browser',
+        src: '/case-studies/voc-program/03-voc-hub.jpg',
+        url: '•••••••.sharepoint.com/voice-of-the-customer',
+        caption: 'The Voice of the Customer Hub, owned and maintained by the design team.',
+      },
       { type: 'heading', text: 'Overview' },
       {
         type: 'text',
@@ -122,6 +130,30 @@ export const caseStudies: CaseStudy[] = [
           'Developed a roadmap to refresh personas and build journey maps for the company’s core experiences.',
           'To get current research and findings in front of decision makers, prioritized standing up an internal SharePoint hub of curated insights that the design team owns and maintains.',
         ],
+      },
+      {
+        type: 'image',
+        src: '/case-studies/voc-program/04-voc-hub-library.jpg',
+        caption:
+          'The hub’s curated library: personas, journey maps, surveys, and qualitative feedback.',
+      },
+      {
+        type: 'image',
+        src: '/case-studies/voc-program/01-pendo-dashboard.jpg',
+        caption:
+          'The real-time NPS dashboard in Pendo: score, response rate, and the promoter, passive, and detractor breakdown.',
+      },
+      {
+        type: 'image',
+        src: '/case-studies/voc-program/am-journey-map.jpg',
+        caption:
+          'An agency-management journey map (current state), tracing tasks, emotions, pain points, and opportunities across the workflow.',
+      },
+      {
+        type: 'image',
+        src: '/case-studies/voc-program/crm-service-blueprint.jpg',
+        caption:
+          'A CRM service blueprint (future state), mapping customer, frontstage, backstage, and support actions across the agency lifecycle.',
       },
       { type: 'heading', text: 'Outcome' },
       {
