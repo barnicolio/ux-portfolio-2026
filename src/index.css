@@ -30,6 +30,30 @@ body {
   margin: 0;
 }
 
+/* Fixed atmospheric background behind all content */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/kelp-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Dark overlay over the background to keep text legible */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.75);
+  pointer-events: none;
+}
+
 #root {
   min-height: 100svh;
   display: flex;
