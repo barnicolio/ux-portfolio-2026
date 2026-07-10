@@ -90,7 +90,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Standing Up a Real-Time Voice of Customer Program',
     company: 'Employers Insurance Group',
     year: '2023–Present',
-    tags: ['Leadership', 'Research', 'Measurement'],
+    tags: ['Leadership', 'Influence', 'Outcomes'],
     summary:
       'Built the organization’s first real-time NPS/CES/CSAT infrastructure, tying design decisions directly to measurable business outcomes.',
     role: 'Manager, Experience Design',
@@ -173,7 +173,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Marketplace Lender-Matching System',
     company: 'BiggerPockets',
     year: '2022–2023',
-    tags: ['Product Strategy', 'Fintech', 'Design Systems'],
+    tags: ['UI Architecture', 'Fintech', 'Design'],
     summary:
       'Designed a lender-matching system that translated lending complexity into plain language, contributing to 2x revenue growth in its first year.',
     role: 'Lead UX Designer',
@@ -263,7 +263,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Designing a Forum for Trust and Scale',
     company: 'BiggerPockets',
     year: '2022',
-    tags: ['UX Research', 'Community', 'Responsive Web'],
+    tags: ['UX Research', 'Design', 'Product Strategy'],
     summary:
       'Rebuilt the forums for the largest US real estate investing community to reverse a 50% year-over-year decline in activity.',
     role: 'Lead UX Designer',
@@ -398,7 +398,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Rebuilding a 15-Year-Old Policy Platform in Salesforce',
     company: 'Pinnacol Assurance',
     year: '2021',
-    tags: ['Enterprise UX', 'Salesforce', 'Insurance'],
+    tags: ['Enterprise UX', 'Data Heavy', 'Highly Regulated'],
     summary:
       'Rebuilt a 15-year-old policy management platform in Salesforce, cutting policy binding time from two weeks to under ten minutes.',
     role: 'Senior UX Designer',
@@ -503,7 +503,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Cutting Workers’ Comp Quotes from Days to Five Minutes',
     company: 'Cake Insure / Pinnacol Assurance',
     year: '2017–2020',
-    tags: ['Insurtech', 'Conversion', 'Responsive Web'],
+    tags: ['Startup', 'Revenue Growth', 'LLM'],
     summary:
       'Designed a self-service quote flow that took small-business workers’ comp quotes from 3–5 days to under five minutes, and drove a redesign that lifted NPS by 16 points.',
     role: 'Lead Senior UX Designer',
