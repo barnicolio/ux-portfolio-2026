@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { getCaseStudy } from '../data/caseStudies'
+import { caseStudies, getCaseStudy } from '../data/caseStudies'
 import type { Block } from '../data/caseStudies'
 import Carousel from '../components/Carousel'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
@@ -93,6 +93,13 @@ function CaseStudy() {
     return <Navigate to="/" replace />
   }
 
+  const currentIndex = caseStudies.findIndex((p) => p.slug === project.slug)
+  const prev = currentIndex > 0 ? caseStudies[currentIndex - 1] : null
+  const next =
+    currentIndex < caseStudies.length - 1
+      ? caseStudies[currentIndex + 1]
+      : null
+
   return (
     <article className="mx-auto max-w-2xl px-6 py-12 sm:py-16">
       <Link to="/" className="text-sm text-[var(--text)] hover:text-[var(--text-h)]">
@@ -122,6 +129,43 @@ function CaseStudy() {
       {project.body.map((block, index) => (
         <BlockContent key={index} block={block} fallbackAlt={project.title} />
       ))}
+
+      <nav
+        aria-label="More case studies"
+        className="mt-16 flex items-start justify-between gap-6 border-t border-[var(--border)] pt-8"
+      >
+        {prev ? (
+          <Link
+            to={`/work/${prev.slug}`}
+            className="group flex max-w-[46%] flex-col gap-1"
+          >
+            <span className="text-xs text-[var(--text)]">
+              <span aria-hidden="true">←</span> Previous
+            </span>
+            <span className="text-sm text-[var(--text-h)] transition-colors group-hover:text-[var(--accent)]">
+              {prev.title}
+            </span>
+          </Link>
+        ) : (
+          <span />
+        )}
+
+        {next ? (
+          <Link
+            to={`/work/${next.slug}`}
+            className="group flex max-w-[46%] flex-col items-end gap-1 text-right"
+          >
+            <span className="text-xs text-[var(--text)]">
+              Next <span aria-hidden="true">→</span>
+            </span>
+            <span className="text-sm text-[var(--text-h)] transition-colors group-hover:text-[var(--accent)]">
+              {next.title}
+            </span>
+          </Link>
+        ) : (
+          <span />
+        )}
+      </nav>
     </article>
   )
 }
