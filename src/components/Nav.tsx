@@ -5,7 +5,7 @@ const RESUME = '/Nicole_Arocha_Resume_2026.pdf'
 const LINKEDIN = 'https://www.linkedin.com/in/nicolearocha/'
 
 const linkClass = ({ isActive }: { isActive: boolean }) =>
-  `text-sm transition-colors hover:text-[var(--text-h)] ${
+  `rounded-md bg-black/30 px-3 py-1.5 text-sm transition-colors hover:text-[var(--text-h)] ${
     isActive ? 'text-[var(--text-h)]' : 'text-[var(--text)]'
   }`
 
@@ -32,7 +32,7 @@ function Nav() {
   }, [pathname])
 
   return (
-    <header className="border-b border-[var(--border)]">
+    <header className="sticky top-0 z-40 bg-black/25 shadow-[0_4px_16px_rgba(0,0,0,0.45)] backdrop-blur-[8px] backdrop-saturate-150">
       <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
         <NavLink
           to="/"
@@ -56,7 +56,7 @@ function Nav() {
             href={RESUME}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[var(--text)] transition-colors hover:text-[var(--text-h)]"
+            className="rounded-md bg-black/30 px-3 py-1.5 text-sm text-[var(--text)] transition-colors hover:text-[var(--text-h)]"
           >
             Resume
             <span className="sr-only"> (opens in new tab)</span>
