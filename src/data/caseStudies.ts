@@ -51,7 +51,7 @@ export const caseStudies: CaseStudy[] = [
         type: 'list',
         items: [
           'Partnered with Enterprise Architecture to prototype an AI-generated, framework-agnostic first-pass component library.',
-          'Partnered with our application development team to make sure the generated component code was usable in production.',
+          'Partnered with the company’s application development team to make sure the generated component code was usable in production.',
           'Evaluated Figma Make, Claude Design, and other AI prototyping tools for the practice.',
           'Established the company’s first Storybook component library and connected it to Claude Design as a live component source for AI-assisted prototyping.',
         ],
@@ -103,7 +103,15 @@ export const caseStudies: CaseStudy[] = [
       { type: 'heading', text: 'The problem' },
       {
         type: 'text',
-        text: 'CSAT was owned by Data Science, NPS/CES weren’t tracked in real time, and personas and journey maps were out of date.',
+        text: 'Outdated and inaccurate information about the company’s customers was steering real investment. Initiatives got funded on assumptions that no longer held, and they weren’t driving the outcomes we expected.',
+      },
+      {
+        type: 'text',
+        text: 'We also weren’t collecting regular feedback about specific experiences, so we had no benchmarks to tell whether changes to the company’s products were actually improving them.',
+      },
+      {
+        type: 'text',
+        text: 'The gaps were concrete: personas were more than three years out of date, journey maps didn’t exist, CSAT was owned by Data Science, and NPS and CES weren’t tracked in real time.',
       },
       { type: 'heading', text: 'Approach' },
       {
@@ -111,7 +119,8 @@ export const caseStudies: CaseStudy[] = [
         items: [
           'Took ownership of the bi-annual CSAT survey and transitioned it from Data Science to Design.',
           'Stood up real-time NPS and CES scoring in Pendo.',
-          'Refreshed agent personas and created updated journey maps.',
+          'Developed a roadmap to refresh personas and build journey maps for the company’s core experiences.',
+          'To get current research and findings in front of decision makers, prioritized standing up an internal SharePoint hub of curated insights that the design team owns and maintains.',
         ],
       },
       { type: 'heading', text: 'Outcome' },
@@ -121,6 +130,8 @@ export const caseStudies: CaseStudy[] = [
           'First real-time Voice of Customer program at the company.',
           'Design-owned measurement infrastructure connecting decisions to outcomes.',
           'Refreshed personas and journey maps in active use across initiatives.',
+          'Updated research is now presented regularly at board meetings.',
+          'Directly influenced prioritization of the biggest pain point for the company’s primary customer group: self-servicing endorsement requests.',
         ],
       },
     ],
@@ -513,7 +524,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         type: 'text',
-        text: 'Understanding that our customers mainly needed the right coverage quickly and at a reasonable price, the product team felt an online form similar to Lemonade, biBERK, or Hippo would scale best. I agreed.',
+        text: 'Understanding that Cake’s customers mainly needed the right coverage quickly and at a reasonable price, the product team felt an online form similar to Lemonade, biBERK, or Hippo would scale best. I agreed.',
       },
       { type: 'heading', text: 'How should the application be formatted?' },
       {
