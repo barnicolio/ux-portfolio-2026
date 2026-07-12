@@ -1,19 +1,19 @@
 @import 'tailwindcss';
 
 :root {
-  --text: #9ca3af;
-  --text-h: #f3f4f6;
-  --bg: #16171d;
-  --border: #2e303a;
-  --accent: #42eeee;
-  --accent-bg: rgba(66, 238, 238, 0.15);
-  --accent-border: rgba(66, 238, 238, 0.5);
+  --text: #52525b;
+  --text-h: #18181b;
+  --bg: #ffffff;
+  --border: #e4e4e7;
+  --accent: #0e7490;
+  --accent-bg: rgba(14, 116, 144, 0.1);
+  --accent-border: rgba(14, 116, 144, 0.4);
 
   --sans: 'Montserrat', system-ui, 'Segoe UI', Roboto, sans-serif;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: dark;
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -28,30 +28,6 @@
 
 body {
   margin: 0;
-}
-
-/* Fixed atmospheric background behind all content */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: url('/kelp-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 1;
-  pointer-events: none;
-}
-
-/* Dark overlay over the background to keep text legible */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: rgba(0, 0, 0, 0.75);
-  pointer-events: none;
 }
 
 #root {
