@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import Nav from './Nav'
 import Footer from './Footer'
+import PixelCrab from './PixelCrab'
 
 function Layout() {
   return (
@@ -16,6 +17,7 @@ function Layout() {
         <Outlet />
       </div>
       <Footer />
+      <PixelCrab />
     </div>
   )
 }
